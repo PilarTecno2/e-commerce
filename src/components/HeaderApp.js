@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Container, Navbar, Row } from 'react-bootstrap';
 import { ShoppingCart } from "./ShoppingCart/ShoppingCart";
+import { Link } from "react-router-dom";
 
 
 // esto es un return inplisito solo se aplica cuando no tiene funcionalidades de js sino mas bien que es algo visual.
@@ -8,11 +9,13 @@ import { ShoppingCart } from "./ShoppingCart/ShoppingCart";
 export const HeaderApp = () => (
     <Navbar>
         <Container>
-            <Row>
-                <Col xs = {12}>
-                    <div> Mini Ecommerce </div>
-                </Col>
-            </Row>
+           <Link to={"/"}>
+                <Row>
+                    <Col xs = {12}>
+                        <div> Mini Ecommerce </div>
+                    </Col>
+                </Row>
+           </Link>
             <ShoppingCart/>
         </Container>
     </Navbar>

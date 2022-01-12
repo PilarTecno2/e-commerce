@@ -1,18 +1,27 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { Row } from "react-bootstrap";
-import json from "../../examples/products.json";
 import { Product } from "./Product";
+import {getAllProducts} from "../../app/service/productCartServices";
 
 export const ListProducts = () => {
-  const products = json.products;
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+    getAllProducts() 
+     .then(data => setProducts(data))
+  },[])
 
   return (
-    <Row>
-      {products.map((product, index) => (
-        <Product key={index} item={product} />
-      ))}
+    <Row xs={4}>
+      {products.length < 0 ? (
+        <div>
+          <p>Cargando productos ...</p>
+        </div>
+      ):(
+        products.map((product, index) => < Product key={index} item={product} />)
+      )}
     </Row>
-  );
+  )
 };
 
 // esta es otra alternativa en return de como hacerlo
