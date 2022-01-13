@@ -1,19 +1,23 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Alert, Container } from 'react-bootstrap';
 import { HeaderApp } from "./components/HeaderApp";
-import { ListProducts } from './components/Products/Listroducts';
-import { AlertProducts } from './components/Products/AlertProduct';
+import { Home } from "./views/Home"
+import { Redirect, Route, Switch } from 'react-router-dom/cjs/react-router-dom.min';
+import { ProductView } from './views/ProductView';
+import { PurchaseView } from './views/Purchase';
 
 const App = () => {
   return (
-    <Container>
-      <div className="App">
-        <AlertProducts/>
-        <HeaderApp />
-        <ListProducts />
-      </div>
-    </Container>
+    <>
+      <HeaderApp />    
+      <Switch>
+        <Route path={"/"} exact component={Home} />
+        <Route path={"/product/:id"} exact component={ProductView}/>
+        <Route path={"/purchase"} exact component={PurchaseView}/>
+        <Route render={() => <Redirect to = {"/"} />} />
+        <Route render={() => <div> 404 pagina no encontrada </div>}/>
+      </Switch>
+    </>
   );
 }
 
