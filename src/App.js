@@ -1,17 +1,11 @@
+import { Navbar } from './component/Navbar';
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container } from 'react-bootstrap';
-import { HeaderApp } from "./components/HeaderApp";
-import { ListProducts } from './components/Products/Listroducts';
 
-const App = () => {
+function App() {
   return (
-    <Container>
-      <div className="App">
-        <HeaderApp />
-        <ListProducts />
-      </div>
-    </Container>
+    <>
+      <Navbar/>
+    </>
   );
 }
 
