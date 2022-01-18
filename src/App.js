@@ -3,6 +3,7 @@ import { Navbar } from './component/Navbar';
 import { Home } from './component/Home';
 import { Switch, Route } from 'react-router-dom/cjs/react-router-dom.min';
 import { Products } from './component/Products';
+import { Product } from './component/Product';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/products" component={Products} />
+        <Route exact path="/products/:id" component={Product} />
       </Switch>  
     </>
   );
