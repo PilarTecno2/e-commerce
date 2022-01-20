@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css'
 import { NavLink } from 'react-router-dom';
 
 export const Products = () => {
@@ -38,6 +39,21 @@ export const Products = () => {
                 </div>
                 <div className="col-md-3">
                     <Skeleton height={350} />
+                </div>
+                <div className="col-md-3">
+                    <Skeleton height={350} />
+                </div>
+                <div className="col-md-3">
+                    <Skeleton height={350}  />
+                </div>
+                <div className="col-md-3">
+                    <Skeleton height={350} />
+                </div>
+                <div className="col-md-3">
+                    <Skeleton height={350} />
+                </div>
+                <div className="col-md-3">
+                    <Skeleton height={350}  />
                 </div>
                 <div className="col-md-3">
                     <Skeleton height={350} />
